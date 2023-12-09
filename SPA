@@ -1,0 +1,8 @@
+graph LR
+A[User] --> B{Open SPA: https://studies.cs.helsinki.fi/exampleapp/spa}
+B --> C{Receive and render initial HTML document}
+C --> D{Load CSS and JavaScript files}
+D --> E{Execute JavaScript code}
+E --> F{Fetch initial data from server (including existing notes)}
+F --> G{Render initial UI with retrieved data}
+G --> A{Display SPA interface}
