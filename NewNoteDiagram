@@ -1,0 +1,57 @@
+Participants:
+
+Browser: User's web browser
+Server: Web server hosting the application
+Steps:
+
+User opens the page:
+
+Browser: Sends a GET request to the server for https://studies.cs.helsinki.fi/exampleapp/notes
+Server:
+Receives the request
+Generates and sends the HTML document for the notes page
+Includes references to necessary resources like CSS and JavaScript files
+Loading resources:
+
+Browser:
+Receives the HTML document
+Parses the HTML document and identifies resource references
+Sends separate GET requests for:
+https://studies.cs.helsinki.fi/exampleapp/main.css
+https://studies.cs.helsinki.fi/exampleapp/main.js
+Server:
+Receives each resource request
+Sends the corresponding file (CSS or JavaScript)
+Processing JavaScript:
+
+Browser:
+Receives the JavaScript file
+Executes the JavaScript code
+Initializes the application and prepares to handle user interactions
+User writes a note:
+
+Browser:
+Captures user input in the text field
+Stores the note content in memory
+User clicks Save:
+
+Browser:
+Builds a JSON object containing the note content
+Sends a POST request to the server at https://studies.cs.helsinki.fi/exampleapp/notes with the JSON object
+Displays a loading indicator to the user
+Server:
+Receives the POST request
+Parses the JSON object to extract the note content
+Saves the new note data to the database
+Sends a response indicating success or failure
+Update UI:
+
+Server:
+Upon successful save, prepares a response containing data for the newly created note
+Browser:
+Receives the server response
+Updates the UI to reflect the newly created note
+Removes the loading indicator
+(Optional) Refresh data:
+
+The browser may periodically send a GET request to the server to retrieve updated notes and refresh the UI.
