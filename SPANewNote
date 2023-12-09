@@ -1,0 +1,21 @@
+graph LR
+A[User] --> B{Open SPA: https://studies.cs.helsinki.fi/exampleapp/spa}
+B --> C{Receive and render initial HTML document}
+C --> D{Load CSS and JavaScript files}
+D --> E{Execute JavaScript code}
+E --> F{Fetch initial data from server (including existing notes)}
+F --> G{Render initial UI with retrieved data}
+G --> A{Display SPA interface}
+
+A --> H{Write new note in text field}
+H --> I{Store note content internally (e.g., in browser memory)}
+A --> J{Click Save button}
+J --> K{Trigger JavaScript function for creating new note}
+K --> L{Build request object with new note content}
+L --> M{Send POST request to server with new note data}
+M --> N{Server receives request and processes new note}
+N --> O{Server sends response: success or failure}
+O --> P{Receive server response}
+P --> Q{Update internal state based on response (success/failure)}
+Q --> R{Update UI: display confirmation or error message}
+R --> A{Continue using SPA with updated notes}
